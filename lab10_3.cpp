@@ -27,13 +27,19 @@ int main()
         
             mean = sum/count;
         
+        source.close();
+        
+        
+        source.open("score.txt");
+        
         while (getline(source,textline))
         {
         
-        sum_of_square += (pow(atof(text.c_str())-mean,2))/float(count);
+        sum_of_square += (pow(atof(textline.c_str())-mean,2))/float(count);
             
         }
 
+         source.close();
 
         cout << "Number of data = " << count << "\n";
         cout << setprecision(3);
