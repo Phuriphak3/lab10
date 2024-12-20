@@ -1,3 +1,43 @@
-//cout << "Number of data = ";
-//cout << "Mean = ";
-//cout << "Standard deviation = ";
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+
+int main()
+
+{
+    
+        double mean;
+        int count = 0;
+        float sum = 0;
+        float sum_of_square = 0;
+        string textline;
+        ifstream source("score.txt");
+
+        while (getline(source,textline))
+            
+        {
+                sum += stof(textline.c_str());
+                count++;
+        }
+        
+            mean = sum/count;
+        
+        while (getline(source,textline))
+        {
+        
+        sum_of_square += (pow(atof(text.c_str())-mean,2))/float(count);
+            
+        }
+
+
+        cout << "Number of data = " << count << "\n";
+        cout << setprecision(3);
+        cout << "Mean = " << mean << "\n";
+        cout << "Standard deviation = " <<  sqrt(sum_of_square) ; 
+
+}
